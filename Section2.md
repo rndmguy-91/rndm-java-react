@@ -100,9 +100,54 @@ function sort( ...args){
 }
 ```
 
+## Destructing
+Extract arrray elements and store them in variables.
 
+```javascript
+const numbers = [1,2,3];
+[num1,num2] = numbers;
+console.log(num1,num2); -> only 1 and 2
+```
+same with objects
+```jvascript
+{name} = {name:'Max', age:'28'}
+console.log(name) -> Max (age would not work)
+```
+## References
+primitive types like bool int etc. are copied like:
+```jvascript
+const number = 1;
+const number2 = number;  // number2 is a real copy.
+```
+working with objects you just copy the pointer to memory and not the hole object or arrays.
 
+```jvascript
+const person = {
+    name:'Max';
+};
+const personTwo = person;
+```
+So personTwo is a copy of the pointer to person
 
+```jvascript
+const person = {
+    name:'Max';
+};
+const personTwo {
+    ...person
+}
+```
+this a real copy of the person by using the spread operator.
+
+## ArrayFunctions
+
+```jvascript
+const numbers = [1,2,3];
+const doubleNumArray = numbers.map( (num) => {
+    return num * 2;
+});
+```
+Modify arrays with array functions like .map(). In map for example you can create a arrow function witch works for each number 'num'. 
 
 
 
